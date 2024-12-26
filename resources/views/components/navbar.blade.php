@@ -45,7 +45,7 @@
             color: #FFFFFF;
             text-decoration: none;
             font-size: 1rem;
-            font-weight: 500;
+            font-weight: bold;
             position: relative;
             transition: color 0.3s ease;
         }

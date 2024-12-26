@@ -2,6 +2,7 @@
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\FallbackController;
 use App\Http\Controllers\FornecedorController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,5 @@ Route::prefix('/app')->group(function () {
     })->name('site.produtos');
 });
  //Rota de Fallback
-Route::fallback(function () {
-    return 'Fallback';
-});
+Route::fallback([FallbackController::class, 'fallback'])->name('site.fallback');
+;
