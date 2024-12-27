@@ -69,10 +69,10 @@
         <label for="motivo">Motivo do Contato</label>
         <select id="motivo" name="motivo" required>
             <option value="">Selecione um motivo</option>
-            <option value="suporte">Suporte</option>
-            <option value="vendas">Vendas</option>
-            <option value="elogio">Elogios</option>
-            <option value="sugest">Sugestões</option>
+            <option value="1">Suporte</option>
+            <option value="2">Vendas</option>
+            <option value="3">Elogios</option>
+            <option value="4">Sugestões</option>
         </select>
 
         <label for="descricao">Descrição</label>
