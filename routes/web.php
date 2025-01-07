@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\ContatoController;
@@ -11,7 +12,13 @@ Route::get('/', [PrincipalController::class, 'principal'])->name('site.principal
 //Rota Sobre Nos
 Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos'])->name('site.sobre-nos');
 //Rota de Contatos
-Route::post('/contato', [ContatoController::class, 'contato'])->name('site.contato');
+// Rota GET para exibir a página de contato
+Route::get('/contato', function () {
+    return view('contato');
+})->name('site.contato');
+
+// Rota POST para processar o envio do formulário
+Route::post('/contato', [ContatoController::class, 'contato']);
 
 //Rota de Apps
 Route::prefix('/app')->group(function () {
@@ -19,14 +26,14 @@ Route::prefix('/app')->group(function () {
     Route::get('/clientes', function () {
         return 'Rota de Clientes';
     })->name('site.clientes');
-   //Rota de Fornecedor
+    //Rota de Fornecedor
     Route::get('/fornecedor', [FornecedorController::class, 'index'])
         ->name('site.fornecedor');
-  //Rota de Produtos
+    //Rota de Produtos
     Route::get('/produtos', function () {
         return 'Rota de Produtos';
     })->name('site.produtos');
 });
- //Rota de Fallback
-Route::fallback([FallbackController::class, 'fallback'])->name('site.fallback');
+    //Rota de Fallback
+    Route::fallback([FallbackController::class, 'fallback'])->name('site.fallback');
 ;
