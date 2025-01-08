@@ -12,12 +12,12 @@ class CreateFornecedoresTable extends Migration
             $table->id();
             $table->string('razao_social');
             $table->string('nome_fantasia')->nullable();
-            $table->string('cnpj', 14)->unique();
+            $table->string('cnpj', 20)->unique();
             $table->string('inscricao_estadual')->nullable();
             $table->string('email')->nullable();
             $table->string('telefone', 20)->nullable();
             $table->string('celular', 20)->nullable();
-            $table->string('cep', 8)->nullable();
+            $table->string('cep', 15)->nullable();
             $table->string('endereco')->nullable();
             $table->string('numero')->nullable();
             $table->string('complemento')->nullable();
